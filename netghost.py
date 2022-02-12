@@ -20,34 +20,45 @@ class cores:
 
 
 def main():
+    """
     try:
         os.system('cls')
     except:
         os.system('clear')
     else:
-        banner = "\n" + cores.VERDE + """	
-        _    __      ___                __      __           
-        | |  / /_  __/   |  ____  ____ _/ /_  __/ /___________
-        | | / / / / / /| | / __ \/ __ `/ / / / / __/ ___/ ___/
-        | |/ / /_/ / ___ |/ / / / /_/ / / /_/ / /_/ /__(__  ) 
-        |___/\__,_/_/  |_/_/ /_/\__,_/_/\__, /\__/\___/____/  
-                                    /____/                 """ + cores.BRANCO + """
-                            \033[1;97m	--NETWORK SCAN"""
-        
-        print(banner)
-        parse = argparse.ArgumentParser(description='-d')
-        argsf = parse.parse_args()
-        if sys.argv[1] == '' or sys.argv[1] == "--help":
-            descricao = """
-                MODO DE USAR python3 VuAnalytics.py 0.0.0.0/0
-            """
-            print(descricao)
+    """    
+    banner = "\n" + cores.VERDE + """	
+    ███╗   ██╗███████╗████████╗     ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗
+    ████╗  ██║██╔════╝╚══██╔══╝    ██╔════╝ ██║  ██║██╔═══██╗██╔════╝╚══██╔══╝
+    ██╔██╗ ██║█████╗     ██║       ██║  ███╗███████║██║   ██║███████╗   ██║   
+    ██║╚██╗██║██╔══╝     ██║       ██║   ██║██╔══██║██║   ██║╚════██║   ██║   
+    ██║ ╚████║███████╗   ██║       ╚██████╔╝██║  ██║╚██████╔╝███████║   ██║   
+    ╚═╝  ╚═══╝╚══════╝   ╚═╝        ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   
+                                                                        """ + cores.BRANCO + """
+                        \033[1;97m	--NETWORK SCAN"""
+    
+    parser = argparse.ArgumentParser(description='Flag')
+    parser.add_argument('-d','--domain' , help = 'Domain name' , required=True)
+    parser.add_argument('-o','--output' , help = 'Output file name [by default it is \'domain.txt\']')
+    args = parser.parse_args()
+    manual = """
+        MANUAL
+    """
 
-            ###TRACEROUT
-            #def
-            #result, unans = traceroute(ip, maxttl=64)
-            #for snd, rcv in result:
-            #    print snd.ttl, rcv.src, snd.sent_time, rcv.time
+    print(banner)
+    parse = argparse.ArgumentParser(description='-d')
+    args = parse.parse_args()
+    if args.damain:
+        return args.damain
+
+        print(descricao)
+    if arg.output:
+        print("save{}")
+        ###TRACEROUT
+        #def
+        #result, unans = traceroute(ip, maxttl=64)
+        #for snd, rcv in result:
+        #    print snd.ttl, rcv.src, snd.sent_time, rcv.time
 
 
 
